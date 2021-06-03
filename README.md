@@ -1,5 +1,4 @@
-//Salut!
-//Je suis PHAM Cong, 19 ans, j'ai une passion avec l'informatique :> 
+//Salut! Je suis PHAM Cong, 19 ans, j'ai une passion avec l'informatique :> 
 
 
 
