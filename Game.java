@@ -1,7 +1,7 @@
 
 // on define le numéro -1 est la mine.
 
-// Problem avec le map, convert char to int?
+// Game controller 
 
 //import java.lang.Math;
 import java.util.Scanner;
@@ -9,14 +9,14 @@ import java.util.Scanner;
 public class Game  {
     //Attributes
     Scanner sc = new Scanner(System.in);
-    public int N;
-    public int numofMines;
-    public char [][]playerMap;
-    public int [][]minesMap;
-    public int cellsreste;
-    public int score;
-    public int posX;
-    public int posY;
+    public int N; //taille du tableau
+    public int numofMines; //nombre de mines
+    public char [][]playerMap; //une variable on va traivailler sur 
+    public int [][]minesMap; //une variable on va traivailler sur
+    public int cellsreste; //les celles totale (N*N)
+    public int score; // le score
+    public int posX;    // position horizontalle on appuie
+    public int posY;    // position verticalle on appuie
 
     //Constructors . Crée plusieur instances. 
     public Game(int N, int numofMines)
@@ -30,7 +30,7 @@ public class Game  {
 
     LesTableau v2 = new LesTableau(); // on va travailler sur l'objet v2
 
-    //Condition of win
+    //Condition of win. Si this.cellesreste = this.numofMines, on va gagner.
     public boolean checkWin(char [][]arr)
     {
         if (this.cellsreste == numofMines ) return true;
@@ -43,7 +43,7 @@ public class Game  {
         char isContinue;
         System.out.println("Your Score: " + score);
         System.out.println("Do you want to try again (y/n)?: ");
-        isContinue = sc.next().charAt(0);
+        isContinue = sc.next().charAt(0); //appuyer y ou n 
         if(isContinue == 'n') 
         {
             return false;
@@ -81,8 +81,8 @@ public class Game  {
         while (status)
         {   
             //Initing
-            boolean [][]var1 = v2.check(N,numofMines);
-            int [][]var2 = v2.mines(var1);
+            boolean [][]var1 = v2.check(N,numofMines); //assigne le var1 = le tableau check
+            int [][]var2 = v2.mines(var1);  //assigne le var2 = le tableau mines
             playerMap = v2.generatePlayerMap(N);
             minesMap = v2.calculvosines(var2);
             score = 0;
